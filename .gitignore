@@ -1,0 +1,6 @@
+.DS_Store
+node_modules/
+tools/__pycache__/
+output/rendered/
+output/screenshots/
+output/server.log
