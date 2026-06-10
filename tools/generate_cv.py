@@ -173,7 +173,7 @@ def build_pdf(path: Path):
         c,
         x,
         y,
-        "Puebla, Mexico | LinkedIn profile included in portfolio",
+        "Puebla, Mexico | Portfolio: ricardo-remote-ai-portfolio.netlify.app",
         left_w - 0.44 * inch,
         size=7.7,
         leading=10,
@@ -300,10 +300,13 @@ def build_pdf(path: Path):
 
 
 def main():
-    build_pdf(OUT_DESKTOP)
     build_pdf(OUT_PORTFOLIO)
-    print(OUT_DESKTOP)
     print(OUT_PORTFOLIO)
+    try:
+        build_pdf(OUT_DESKTOP)
+        print(OUT_DESKTOP)
+    except PermissionError:
+        print(f"Skipped desktop copy: permission denied for {OUT_DESKTOP}")
 
 
 if __name__ == "__main__":
